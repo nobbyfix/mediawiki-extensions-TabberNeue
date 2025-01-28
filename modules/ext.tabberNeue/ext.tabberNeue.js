@@ -433,7 +433,7 @@ class TabberBuilder {
 		if ( activeTabFromUrlHash.closest( '.tabber__tabs' ) !== this.tablist ) {
 			return activeTab;
 		}
-		Util.setParentTabberActiveTab( activeTab );
+		Util.setParentTabberActiveTab( activeTabFromUrlHash );
 		return activeTabFromUrlHash;
 	}
 
