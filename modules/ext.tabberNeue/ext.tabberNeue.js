@@ -433,6 +433,7 @@ class TabberBuilder {
 		if ( activeTabFromUrlHash.closest( '.tabber__tabs' ) !== this.tablist ) {
 			return activeTab;
 		}
+		Util.setParentTabberActiveTab( activeTab );
 		return activeTabFromUrlHash;
 	}
 
@@ -448,7 +449,6 @@ class TabberBuilder {
 		const activeTab = this.getActiveTab( urlHash );
 		this.setTabsAttributes();
 		await TabberAction.setActiveTab( activeTab );
-		Util.setParentTabberActiveTab( activeTab );
 		TabberAction.updateHeaderOverflow( this.tablist );
 
 		// Start attaching event
