@@ -123,7 +123,7 @@ class Util {
 		const parentTabHeader = document.getElementById( parentTabHeaderId );
 		if ( parentTabHeader ) {
 			parentTabHeader.click();
-			Util.selectParentTab( parentTabHeader );
+			Util.setParentTabberActiveTab( parentTabHeader );
 		}
 	}
 }
