@@ -102,6 +102,30 @@ class Util {
 			return activeTabFromUrlHash;
 		}
 	}
+
+	/**
+	 * Doc
+	 *
+	 * @param {Element} element - Doc
+	 * @return {void}
+	 */
+	static setParentTabberActiveTab( element ) {
+		if ( !element ) {
+			return;
+		}
+
+		const parentTabPanel = element.closest( '.tabber__panel' );
+		if( !parentTabPanel ) {
+			return;
+		}
+
+		const parentTabHeaderId = parentTabPanel.id.replace( 'tabber-tabpanel-', 'tabber-tab-' );
+		const parentTabHeader = document.getElementById( parentTabHeaderId );
+		if ( parentTabHeader ) {
+			parentTabHeader.click();
+			Util.selectParentTab( parentTabHeader );
+		}
+	}
 }
 
 module.exports = Util;

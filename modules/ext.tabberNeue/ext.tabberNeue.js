@@ -448,6 +448,7 @@ class TabberBuilder {
 		const activeTab = this.getActiveTab( urlHash );
 		this.setTabsAttributes();
 		await TabberAction.setActiveTab( activeTab );
+		Util.setParentTabberActiveTab( activeTab );
 		TabberAction.updateHeaderOverflow( this.tablist );
 
 		// Start attaching event
@@ -486,6 +487,7 @@ async function load( tabberEls ) {
 			if ( tab ) {
 				event.preventDefault();
 				tab.click();
+				Util.setParentTabberActiveTab( tab );
 			}
 		} );
 	}, 250 );
